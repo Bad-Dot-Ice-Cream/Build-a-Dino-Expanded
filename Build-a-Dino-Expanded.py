@@ -2,10 +2,31 @@ import random
 
 valid_dinos = ["Dino1", "Dino2", "Dino3"]
 
-
+# Base Class/Default
 class Dinosaur:
     def __init__(self, name, species, diet, age):
         self.name = name
         self.species = species  #  [Flying Dinosaur, Water Dinosaur] etc.
         self.diet = diet
         self.age = age
+
+    def Dino_Roar(self):
+        print(f"{self.name} the {self.species} releases a powerful ROAR!")
+
+# Flying Subclass
+class FlyingDinosaur(Dinosaur):
+    def __init__(self, name, species, diet, age, wing_span):
+        super().__init__(name, species, diet, age)
+        self.wing_span = wing_span
+    
+    def Dino_Roar(self):
+        print(f"{self.name} the {self.species} releases a mindshattering cry from above!")
+
+# Swimming Subclass
+class WaterDinosaur(Dinosaur):
+    def __init__(self, name, species, diet, age, swim_speed):
+        super().__init__(name, species, diet, age)
+        self.swim_speed = swim_speed
+    
+    def Dino_Roar(self):
+        print(f"{self.name} the {self.species} releases a bubbly growl from the depths!")
